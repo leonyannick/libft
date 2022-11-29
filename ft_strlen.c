@@ -6,7 +6,7 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 17:29:33 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/11/28 17:44:06 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/11/29 09:39:24 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ size_t	ft_strlen(const char *s)
 	return(size);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	char test[] = "kurios";
 
 	printf("%i", ft_strlen(test));
-}
+} */

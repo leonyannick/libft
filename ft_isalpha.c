@@ -6,15 +6,15 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 14:50:41 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/11/28 15:15:52 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/11/29 13:26:07 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	is_alpha(int c)
 {
-	if ((c <= 'z' && c>= 'a') || (c <= 'Z' && c>= 'A'))
+	if ((c <= 'z' && c >= 'a') || (c <= 'Z' && c >= 'A'))
 	{
-		return(1);
+		return (1);
 	}
 	return (0);
 }

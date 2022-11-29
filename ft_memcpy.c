@@ -6,7 +6,7 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 16:47:29 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/11/28 17:55:32 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/11/29 11:58:36 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-int	main(void)
+/* int	main(void)
 {
-	/* char str[] = "test";
+	char str[] = "test";
 	printf("%s\n", str);
 	memset(&str, 'c', 3);
-	printf("%s\n", str); */
-}
+	printf("%s\n", str);
+} */

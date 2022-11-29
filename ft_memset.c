@@ -6,7 +6,7 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 16:32:13 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/11/28 16:39:56 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/11/29 11:57:44 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ void	*ft_memset(void *s, int c, size_t n)
 	return (s);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	char str[] = "test";
 	printf("%s\n", str);
 	memset(&str, 'c', 3);
 	printf("%s\n", str);
-}
+} */
