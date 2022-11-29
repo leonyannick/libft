@@ -6,7 +6,7 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 11:47:35 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/11/29 13:44:43 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/11/29 17:10:02 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,15 @@ int	main(void)
  */
 
 	//strlcat
-	char src1[] = "test";
+	/* char src1[] = "test";
 	char dst1[9] = "leon";
 	ft_strlcat(dst1, src1, 9);
-	printf("%s\n", dst1);
+	printf("%s\n", dst1); */
+
+	//strchr = strrchr
+	char src1[] = "testez";
+	char c = 't';
+	printf("%s\n", ft_strrchr(src1, c));
 
 	
 }
