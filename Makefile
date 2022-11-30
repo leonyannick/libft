@@ -6,7 +6,7 @@
 #    By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 11:21:05 by lbaumann          #+#    #+#              #
-#    Updated: 2022/11/29 13:22:14 by lbaumann         ###   ########.fr        #
+#    Updated: 2022/11/30 12:53:09 by lbaumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 NAME = libft.a
 
-SRC = *.c
+DEPS = hellomake.h
+OBJ = ft_bzero
 
 all:
 	gcc -o $(NAME) $(SRC)

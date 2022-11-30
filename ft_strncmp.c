@@ -1,40 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/28 16:32:13 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/11/30 18:40:12 by lbaumann         ###   ########.fr       */
+/*   Created: 2022/11/30 10:37:18 by lbaumann          #+#    #+#             */
+/*   Updated: 2022/11/30 14:06:35 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-	DESC: fills first n bytes of memory area (pointed to by s) with constant byte c
-	RETURN: returns pointer to memory area
-	TESTS: -
-*/
-void	*ft_memset(void *s, int c, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	char	*addr;
-
-	addr = (char *) s;
-	while (n)
+	while (*s1 != 0 && *s2 != 0 && n > 0)
 	{
-		*addr = c;
-		addr++;
+		if (*s1 < *s2)
+			return (-1);
+		else if (*s1 > *s2)
+			return (1);
+		*s1++;
+		*s2++;
 		n--;
 	}
-	return ((char *) s);
+	return (0);
 }
-
-/* int	main(void)
-{
-	char str[] = "test";
-	printf("%s\n", str);
-	memset(&str, 'c', 3);
-	printf("%s\n", str);
-} */

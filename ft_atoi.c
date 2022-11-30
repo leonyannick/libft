@@ -1,40 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/28 16:32:13 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/11/30 18:40:12 by lbaumann         ###   ########.fr       */
+/*   Created: 2022/11/30 12:34:47 by lbaumann          #+#    #+#             */
+/*   Updated: 2022/11/30 13:02:02 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
-/*
-	DESC: fills first n bytes of memory area (pointed to by s) with constant byte c
-	RETURN: returns pointer to memory area
-	TESTS: -
-*/
-void	*ft_memset(void *s, int c, size_t n)
+int	ft_atoi(const char *str)
 {
-	char	*addr;
+	int	num;
+	int	cnt_sign;
 
-	addr = (char *) s;
-	while (n)
+	num = 0;
+	cnt_sign = 0;
+
+	while (*str == ' ')
+		str++;
+
+	while (*str == '+' || *str == '-')
 	{
-		*addr = c;
-		addr++;
-		n--;
+		if (*str == '-')
+			cnt_sign++;
+		str++;
 	}
-	return ((char *) s);
+	while (*str <= '9' && *str >= '0')
+	{
+		num = 10 * num + *str - '0';
+		str++;
+	}
+	if (cnt_sign % 2 != 0)
+		num *= -1;
+	return (num);
 }
 
-/* int	main(void)
+int	main(void)
 {
-	char str[] = "test";
-	printf("%s\n", str);
-	memset(&str, 'c', 3);
-	printf("%s\n", str);
-} */
+	char test[] = "--42";
+	printf("%i\n", ft_atoi(test));
+}

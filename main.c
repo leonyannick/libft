@@ -6,7 +6,7 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 11:47:35 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/11/29 17:10:02 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/11/30 11:46:03 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 int	main(void)
 {
+	printf("skdjfhsdfkj");
+	//strncmp
+	char s1[] = "test";
+	char s2[] = "test";
+	printf("sdsdf %i/n", ft_strncmp(s1, s2, 2));
+
 	//bzero
 	/* char str[] = "test";
 	printf("%s\n", str);
@@ -51,10 +57,8 @@ int	main(void)
 	ft_strlcat(dst1, src1, 9);
 	printf("%s\n", dst1); */
 
-	//strchr = strrchr
-	char src1[] = "testez";
+	//strchr + strrchr
+	/* char src1[] = "testez";
 	char c = 't';
-	printf("%s\n", ft_strrchr(src1, c));
-
-	
+	printf("%s\n", ft_strrchr(src1, c)); */
 }

@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   test_main.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 17:02:38 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/11/29 17:13:46 by lbaumann         ###   ########.fr       */
+/*   Created: 2022/11/30 14:48:29 by lbaumann          #+#    #+#             */
+/*   Updated: 2022/11/30 15:07:13 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
-char	*ft_strrchr(const char *s, int c)
+int	main(void)
 {
-	int	len;
+	char s1[] = "sdfjkbjlkbsjkdbhor";
+	char sub[] = "sdfj";
 
-	len = ft_strlen(s);
-
-	if (c == 0)
-		return ((char *) &s[len + 1]);
-	while (len >= 0)
-	{
-		if (s[len] == c)
-			return ((char *) &s[len]);
-		len--;
-	}
-
-	return (0);
+	printf("%i/n", strnstr(s1, sub, 3)); 
 }

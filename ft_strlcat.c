@@ -6,37 +6,45 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 13:28:52 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/11/29 13:43:02 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/11/30 11:13:45 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
+	-size = full size of buffer
+	-src and dst have to be NULL terminated
 	-appends src at end of dst
 	-appends at most size - strlen(dst) - 1 bytes
+	-returns: initial length of dst + length of src
+	-if traversed size characters without finding NULL, no NULL termination
 */
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int	i;
+	int	dst_len;
+	int	src_len;
 
-	i = 0;
+	dst_len = ft_strlen(dst);
+	src_len = ft_strlen(src);
 
+	if (size <= dst_len)
+		return (size = src_len);
 	while (*dst != 0)
 	{
 		dst++;
 		size--;
 	}
 
-	while(i < size - 1 && *src != 0)
+	while((size - 1) > 0 && *src != 0)
 	{
 		*dst = *src;
 		dst++;
 		src++;
-		i++;
+		size--;
 	}
-
 	*dst = 0;
-	return (ft_strlen(src));
+
+	return (dst_len + src_len);
 }
