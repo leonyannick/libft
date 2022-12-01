@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
 /*
@@ -29,8 +30,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	d = (char *) dest;
 	while (n)
 	{
-		if (s < d && (s + n > d)) //overlap src addr smaller
-		*(d + n) = *(s + n);
+		if (s < d) //overlap src addr smaller
+			*(d + n - 1) = *(s + n - 1);
 		else
 		{
 			*d = *s;
@@ -44,10 +45,12 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 int	main(void)
 {
-	char str[10] = "test";
-
+	char str[5] = "test";
+	char dst[5];
 	printf("%s\n", str);
 	//printf("%s\n", dst);
-	ft_memmove(&str[2], str, 5);
-	printf("%s\n", &str[2]);
+	//ft_memmove(&str[2], str, 5);
+	//printf("%s\n", &str[2]);
+	ft_memmove(dst, str, 5);
+	printf("%s\n", dst);
 }
