@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
+/*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 11:47:35 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/11/30 11:46:03 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/05 11:02:19 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include "libft.h"
+#include "libft.a"
 
 int	main(void)
 {
-	printf("skdjfhsdfkj");
+	/* printf("skdjfhsdfkj");
 	//strncmp
 	char s1[] = "test";
 	char s2[] = "test";
-	printf("sdsdf %i/n", ft_strncmp(s1, s2, 2));
+	printf("sdsdf %i/n", ft_strncmp(s1, s2, 2)); */
 
 	//bzero
 	/* char str[] = "test";
@@ -61,4 +61,8 @@ int	main(void)
 	/* char src1[] = "testez";
 	char c = 't';
 	printf("%s\n", ft_strrchr(src1, c)); */
+
+	//ft_atoi
+	char str[] = "+---++456456";
+	printf("%i\n", )
 }

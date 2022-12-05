@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
+/*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 09:03:26 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/11/29 13:39:52 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/05 11:43:23 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 size_t ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 

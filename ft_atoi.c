@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
+/*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 12:34:47 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/11/30 13:02:02 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/05 11:12:04 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 int	ft_atoi(const char *str)
@@ -40,8 +39,8 @@ int	ft_atoi(const char *str)
 	return (num);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	char test[] = "--42";
 	printf("%i\n", ft_atoi(test));
-}
+} */

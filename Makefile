@@ -3,36 +3,31 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+         #
+#    By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 11:21:05 by lbaumann          #+#    #+#              #
-#    Updated: 2022/11/30 12:53:09 by lbaumann         ###   ########.fr        #
+#    Updated: 2022/12/05 17:48:15 by lbaumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -c
 NAME = libft.a
+OBJS = ft_atoi.o ft_strlen.o ft_strjoin.o ft_strlcat.o ft_strlcpy.o ft_substr.o ft_strtrim.o ft_strncmp.o
+SRCS = ft_atoi.c ft_strlen.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_substr.c ft_strtrim.c ft_strncmp.c
 
-DEPS = hellomake.h
-OBJ = ft_bzero
+all: $(NAME)
 
-all:
-	gcc -o $(NAME) $(SRC)
+$(NAME): $(OBJS)
+	ar -crs $(NAME) $(OBJS)
 
-test:
-	gcc -o test.a $(SRC)
-	./test.a
+$(OBJS): $(SRCS)
+	$(CC) $(CFLAGS) $(SRCS)
 
 clean:
-	/bin/rm -f *.o
+	rm -f $(OBJS)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
-
-
-
-
-

@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_ft_calloc.c                                   :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/02 13:05:53 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/02 13:13:47 by lbaumann         ###   ########.fr       */
+/*   Created: 2022/12/05 11:24:53 by lbaumann          #+#    #+#             */
+/*   Updated: 2022/12/05 12:05:57 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <assert.h>
 #include <stdlib.h>
 #include "libft.h"
 
-int	main(void)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	/* char *ptr;
-	ptr = ft_calloc(45874972665, 547885);
-	if(!ptr)
-		(printf("NULL POINTER RETURNED\n"));
-	free(ptr); */
-	assert(ft_calloc(5, 0) == calloc(5, 0));
+	int		len1;
+	int		len2;
+	char	*ret;
+	char	*ret_start;
+
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+
+	ret = malloc(len1 + len2 + 1);
+	if (ret == 0)
+		return (0);
+	ret_start = ret;
+	while (*s1 != 0)
+	{
+		*ret = *s1;
+		ret++;
+		s1++;
+	}
+	ft_strlcpy(ret, s2, len2 + 1);
+	return (ret_start);
 }
