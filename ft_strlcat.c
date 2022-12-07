@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 13:28:52 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/05 11:42:57 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/07 14:32:26 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	src_len = ft_strlen(src);
 
 	if (size <= dst_len)
-		return (size = src_len);
+		return (size + src_len);
 	while (*dst != 0)
 	{
 		dst++;

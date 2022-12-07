@@ -6,7 +6,7 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 12:29:45 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/01 12:37:50 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/07 09:20:04 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,5 @@ char	*ft_strdup(const char *s)
 	}
 	*dup = 0;
 	return (dup_start);
+
 }
