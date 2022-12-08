@@ -6,11 +6,13 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 14:50:41 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/11/29 13:26:07 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/08 10:56:36 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	is_alpha(int c)
+#include "libft.h"
+
+int	ft_isalpha(int c)
 {
 	if ((c <= 'z' && c >= 'a') || (c <= 'Z' && c >= 'A'))
 	{

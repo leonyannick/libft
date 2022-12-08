@@ -6,7 +6,7 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:19:26 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/11/30 18:56:13 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/08 11:09:51 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_bzero(void *s, size_t n)
 {
 	char	*c;
 
-	c = s;
+	c = (char *) s;
 	while (n)
 	{
 		*c = 0;

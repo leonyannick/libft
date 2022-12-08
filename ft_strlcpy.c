@@ -3,37 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 09:03:26 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/05 11:43:23 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/08 13:26:26 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
--usage: null should be included in size, src must be null terminated
--null terminate result as long as at least 1 byte buffer in dest
--copies up to size - 1 characters to dest
+	DESCRIPTION: copies up to size - 1 characters to dest
+			null terminate result as long as at size > 0
+	USAGE: null should be included in size, src must be null terminated
+	RETURN: length of string trying to create (length of src)
 */
-
-size_t ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t	i;
+	size_t	src_len;
 
-	i = 0;
-
-	while(i < size - 1 && *src != 0)
+	src_len = ft_strlen(src);
+	if (size == 0)
+		return (src_len);
+	while (0 < (size - 1) && *src != 0)
 	{
 		*dst = *src;
 		dst++;
 		src++;
-		i++;
+		size--;
 	}
 	*dst = 0;
-
-	return(ft_strlen(src));
+	return (src_len);
 }
 
 /* int	main(void)

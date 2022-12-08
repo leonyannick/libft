@@ -6,11 +6,10 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 12:29:45 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/07 09:20:04 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/08 16:51:58 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 /*
@@ -22,20 +21,18 @@ char	*ft_strdup(const char *s)
 {
 	int		len;
 	char	*dup;
-	char	*dup_start;
+	int		i;
 
 	len = ft_strlen(s);
 	dup = malloc(len + 1);
-	if (!dup)
+	if (dup == 0)
 		return (0);
-	dup_start = dup;
-	while (len > 0)
+	i = 0;
+	while (s[i] != 0)
 	{
-		*dup = *s;
-		dup++;
-		s++;
+		dup[i] = s[i];
+		i++;
 	}
-	*dup = 0;
-	return (dup_start);
-
+	dup[len] = 0;
+	return (dup);
 }

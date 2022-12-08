@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_main.c                                        :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/30 14:48:29 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/11/30 15:07:13 by lbaumann         ###   ########.fr       */
+/*   Created: 2022/12/08 10:21:29 by lbaumann          #+#    #+#             */
+/*   Updated: 2022/12/08 10:56:30 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+#include "libft.h"
 
-int	main(void)
+int	ft_isalnum(int c)
 {
-	char s1[] = "sdfjkbjlkbsjkdbhor";
-	char sub[] = "sdfj";
-
-	printf("%i/n", strnstr(s1, sub, 3)); 
+	if (ft_isalpha(c) || ft_isdigit(c))
+		return (1);
+	return (0);
 }

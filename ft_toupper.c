@@ -1,39 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/30 13:39:26 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/08 15:12:06 by lbaumann         ###   ########.fr       */
+/*   Created: 2022/12/08 10:36:20 by lbaumann          #+#    #+#             */
+/*   Updated: 2022/12/08 10:45:41 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-	-scans n bytes of s and looks for 1st instance of c
-	-interpreted as unsigned char
-	-return value: pointer to matching byte or NULL if given c not occuring 
-
-	TESTS:
-	-n = 0
-	-c = 0
-	-c not in s
+	behavior undefined if c not unsigned char value or EOF
 */
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_toupper(int c)
 {
-	unsigned char	*addr;
-
-	addr = (unsigned char *) s;
-	c = (unsigned char) c;
-	while (n > 0)
+	if (c <= 'z' && c >= 'a')
 	{
-		if (*addr == c)
-			return ((void *) addr);
-		addr++;
-		n--;
+		c -= 32;
+		return (c);
 	}
-	return (0);
+	return (c);
 }

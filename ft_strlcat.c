@@ -6,7 +6,7 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 13:28:52 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/07 14:32:26 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/08 11:51:39 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 	-returns: initial length of dst + length of src
 	-if traversed size characters without finding NULL, no NULL termination
 */
-
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	dst_len;
@@ -28,7 +27,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
-
 	if (size <= dst_len)
 		return (size + src_len);
 	while (*dst != 0)
@@ -36,8 +34,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		dst++;
 		size--;
 	}
-
-	while((size - 1) > 0 && *src != 0)
+	while ((size - 1) > 0 && *src != 0)
 	{
 		*dst = *src;
 		dst++;
@@ -45,6 +42,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		size--;
 	}
 	*dst = 0;
-
 	return (dst_len + src_len);
 }

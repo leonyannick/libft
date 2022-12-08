@@ -6,15 +6,15 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 08:52:19 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/11/30 20:19:30 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/08 11:27:13 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 /*
-	DESC: copies n bytes from src to dest. areas maz overlap. first into temp array, that is not overlapping
+	DESC: copies n bytes from src to dest. areas maz overlap. first into temp 
+			array, that is not overlapping
 	RETURN: pointer to dest
 	TESTS: -overlap with src addr smaller
 			-overlap with dst adrr smaller
@@ -22,15 +22,16 @@
 */
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-
 	char	*s;
 	char	*d;
 
 	s = (char *) src;
 	d = (char *) dest;
+	if (dest == 0 && src == 0)
+		return (0);
 	while (n)
 	{
-		if (s < d) //overlap src addr smaller
+		if (s < d)
 			*(d + n - 1) = *(s + n - 1);
 		else
 		{
@@ -43,7 +44,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	char str[5] = "test";
 	char dst[5];
@@ -54,3 +55,4 @@ int	main(void)
 	ft_memmove(dst, str, 5);
 	printf("%s\n", dst);
 }
+ */

@@ -6,11 +6,10 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 11:56:20 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/01 12:29:24 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/08 16:34:00 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 /*
@@ -20,7 +19,7 @@
 
 	RETURN: 	nmemb/size = 0 -> null or pointer that can be freed
 				pointer to allocated memory
-				NULL if nmemb * size causes integer overflow
+				NULL if nmemb * size causes integer overflow (app. not relevant)
 
 	TESTS:	nmemb/size = 0
 			nmemb * size > max_integer
@@ -28,9 +27,13 @@
 */
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	if (nmemb == 0 || size == 0 || ((long) nmemb * (long) size > 2147483647))
+	void	*addr;
+
+	addr = malloc(nmemb * size);
+	if (addr == 0)
 		return (0);
-	return (malloc(nmemb * size));
+	ft_memset(addr, 0, (nmemb * size));
+	return (addr);
 }
 
 /* int	main(void)

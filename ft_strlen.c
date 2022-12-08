@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 17:29:33 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/05 08:46:16 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/08 11:08:01 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlen(const char *s)
 		size++;
 		s++;
 	}
-	return(size);
+	return (size);
 }
 
 /* int	main(void)

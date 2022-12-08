@@ -3,16 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 15:55:08 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/05 18:00:55 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/08 18:01:09 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "libft.h"
+
+/*
+	checks if char c is contained in set s
+	if contained 1 is returned
+*/
+static int	char_in_set(char c, char *set)
+{
+	while (*set != 0)
+	{
+		if (c == *set)
+			return (1);
+		set++;
+	}
+	return (0);
+}
+
 
 /*
 	Parameters
@@ -28,28 +42,23 @@
 */
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		set_len;
+	int		start_idx;
+	int		end_idx;
 	int		s1_len;
-	char	*ret;
-	int		trim_size;
 
-	set_len = ft_strlen(set);
 	s1_len = ft_strlen(s1);
-	trim_size = 0;
-	if (ft_strncmp(s1 + s1_len - set_len, set, set_len) == 0)
+	start_idx = 0;
+	while (char_in_set(*s1, set) && *s1 != 0)
 	{
-		trim_size += set_len;
+		start_idx++;
+		*s1++;
 	}
-	if (ft_strncmp(s1, set, set_len) == 0)
+	while(char_in_set(&s1[s1_len], set) && s1_len > 0)
 	{
-		s1 += set_len;
-		trim_size += set_len;
+		end_idx++;
+		s1_len--;
 	}
-	
-	
-	ret = malloc(s1_len - trim_size + 1);
-	if (ret == 0)
-		return (0);
-	ft_strlcpy(ret, s1, s1_len - trim_size + 1);
-	return (ret);
+
+
+	return (0);
 }

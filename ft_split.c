@@ -6,7 +6,7 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 09:41:52 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/07 18:17:46 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/08 10:24:52 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ char	**ft_split(char const *s, char c)
 	if (s == 0)
 		return (0);
 	amnt_splits = ft_cnt_delimiter((char *) s, c) + 1;
-	/* arr = malloc((amnt_splits + 1) * sizeof(char *));
+	arr = malloc((amnt_splits + 1) * sizeof(char *));
 	if (arr == 0)
 		return (0);
 	temp_arr = arr;
@@ -86,13 +86,13 @@ char	**ft_split(char const *s, char c)
 		}
 		s += word_len + 1;
 	}
-	*arr = 0; */
-	//return (temp_arr);
-	return (0);
+	*arr = 0;
+	return (temp_arr);
+	// return (0);
 }
 
 
-void    print_string_arr(char **arr)
+/* void    print_string_arr(char **arr)
 {
     if(arr == 0)
     {
@@ -110,16 +110,16 @@ void    print_string_arr(char **arr)
 
 int	main(void)
 {
-	printf("%i\n", ft_cnt_delimiter("aaaadaaadaadad", 'd'));
+	//printf("%i\n", ft_cnt_delimiter("aaaadaaadaadad", 'd'));
 
 	//ft_split
     char delim = 'X';
-    // print_string_arr(ft_split("XHelloXWorldX", 'X'));
+    //print_string_arr(ft_split("XHelloXWorldX", 'X'));
     // print_string_arr(ft_split("XHelloXWorld", 'X'));
     // print_string_arr(ft_split("HelloXWorldX", 'X'));
     // print_string_arr(ft_split("HelloXWorld", 'X'));
-    // print_string_arr(ft_split("XHello WorldX", 'X'));
-    // print_string_arr(ft_split("NoDelimiter", 'X'));
+    print_string_arr(ft_split("XHello WorldX", 'X'));
+    print_string_arr(ft_split("NoDelimiter", 'X'));
     // print_string_arr(ft_split("Hello WorldX", 'X'));
     // print_string_arr(ft_split("HelloXXWorld", 'X'));
     // print_string_arr(ft_split("X", 'X'));
@@ -129,7 +129,7 @@ int	main(void)
     // print_string_arr(ft_split(0, 'X'));
     // print_string_arr(ft_split("split  ||this|for|me|||||!|", '|'));
 
-	/* char str[] = "churchcchapelc";
+	char str[] = "churchcchapelc";
 	char **test_arr;
 	int i = 0;
 
@@ -139,11 +139,11 @@ int	main(void)
 	{
 		printf("%s\n", test_arr[i]);
 		i++;
-	} */
+	}
 
 	//printf("len until next delim: %i\n", ft_substr_len(&str[1], 'c'));
 
 	//ft_split(str, 'c');
 
 	//printf("%li\n", sizeof(char *));
-}
+} */

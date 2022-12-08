@@ -6,7 +6,7 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 16:47:29 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/11/30 19:32:24 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/08 11:18:56 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	s = (char *) src;
 	d = (char *) dest;
+	if (dest == 0 && src == 0)
+		return (0);
 	while (n)
 	{
 		*d = *s;
@@ -34,7 +36,9 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-/* int	main(void)
+/* #include <string.h>
+
+int	main(void)
 {
 	char str[] = "test";
 	char dst[5];
