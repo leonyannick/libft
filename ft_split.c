@@ -6,7 +6,7 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 09:41:52 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/09 17:17:11 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/09 17:37:03 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,27 @@ static int	ft_cnt_substr(char *s, char c)
 	return (cnt_substr);
 }
 
+static int	ft_cpystrs(char *s, char c, char **arr, char *last_addr)
+{
+	int	word_len;
+
+	while (s < last_addr)
+	{
+		word_len = ft_substr_len((char *)s, c);
+		if (word_len != 0)
+		{
+			*arr = malloc(word_len + 1);
+			if (*arr == 0)
+				return (0);
+			ft_strlcpy(*arr, (char *)s, word_len + 1);
+			arr++;
+		}
+		s += word_len + 1;
+	}
+	*arr = 0;
+	return (1);
+}
+
 /*
 	PARAMETERS:
 		s: The string to be split.
@@ -73,8 +94,6 @@ char	**ft_split(char const *s, char c)
 {
 	int		substrs;
 	char	**arr;
-	char	**temp_arr;
-	int		word_len;
 	char	*last_addr;
 
 	if (s == 0)
@@ -83,23 +102,10 @@ char	**ft_split(char const *s, char c)
 	arr = malloc((substrs + 1) * sizeof(char *));
 	if (arr == 0)
 		return (0);
-	temp_arr = arr;
 	last_addr = (char *)s + ft_strlen(s);
-	while (s < last_addr)
-	{
-		word_len = ft_substr_len((char *)s, c);
-		if (word_len != 0)
-		{
-			*arr = malloc(word_len + 1);
-			if (*arr == 0)
-				return (0);
-			ft_strlcpy(*arr, (char *)s, word_len + 1);
-			arr++;
-		}
-		s += word_len + 1;
-	}
-	*arr = 0;
-	return (temp_arr);
+	if (!ft_cpystrs((char *)s, c, arr, last_addr))
+		return (0);
+	return (arr);
 }
 
 /* void    print_string_arr(char **arr)
