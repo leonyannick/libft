@@ -6,7 +6,7 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 15:55:08 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/08 18:01:09 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/09 10:43:03 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 /*
 	checks if char c is contained in set s
 	if contained 1 is returned
+	direction: 0 forward , 1 backwards
 */
 static int	char_in_set(char c, char *set)
 {
@@ -26,7 +27,6 @@ static int	char_in_set(char c, char *set)
 	}
 	return (0);
 }
-
 
 /*
 	Parameters
@@ -45,20 +45,29 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		start_idx;
 	int		end_idx;
 	int		s1_len;
+	int		i;
+	char	*ret;
 
 	s1_len = ft_strlen(s1);
 	start_idx = 0;
-	while (char_in_set(*s1, set) && *s1 != 0)
+	end_idx = 0;
+	i = 0;
+	while (char_in_set((char) s1[i], (char *) set) && *s1 != 0)
 	{
 		start_idx++;
-		*s1++;
+		i++;
 	}
-	while(char_in_set(&s1[s1_len], set) && s1_len > 0)
+	while (char_in_set((char) s1[s1_len - 1], (char *) set) && s1_len > 0)
 	{
 		end_idx++;
 		s1_len--;
 	}
-
-
-	return (0);
+	s1_len = ft_strlen(s1);
+	ret = ft_substr(s1, start_idx, s1_len - end_idx - start_idx);
+	return (ret);
 }
+/* int main(void)
+{
+	char test[] = "aaabbbbtestbbaba";
+	printf("%s\n", ft_strtrim(test, "ab"));
+} */

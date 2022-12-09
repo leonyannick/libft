@@ -6,12 +6,10 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 09:41:52 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/08 10:24:52 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/09 17:17:11 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "libft.h"
 
 /*
@@ -30,20 +28,32 @@ static int	ft_substr_len(char *s, char c)
 	return (len);
 }
 
-static int	ft_cnt_delimiter(char *s, char c)
+/*
+	count occurrences of delimiter c in s,
+	delimiter multiple times in a row is counted as one
+	delimiter in beginning and end of string dont count
+*/
+static int	ft_cnt_substr(char *s, char c)
 {
-	int		cnt_delimiter;
+	int		cnt_substr;
+	int		i;
+	int		flag;
 
-	cnt_delimiter = 0;
-	while (1)
+	flag = 0;
+	cnt_substr = 0;
+	i = 0;
+	while (s[i] != 0)
 	{
-		s = ft_strchr(s, c);
-		if (s == 0)
-			break ;
-		s++;
-		cnt_delimiter++;
+		if (s[i] != c && flag == 0)
+		{
+			cnt_substr++;
+			flag = 1;
+		}
+		if (s[i] == c)
+			flag = 0;
+		i++;
 	}
-	return (cnt_delimiter);
+	return (cnt_substr);
 }
 
 /*
@@ -54,43 +64,43 @@ static int	ft_cnt_delimiter(char *s, char c)
 		The array of new strings resulting from the split.
 		NULL if the allocation fails.
 	DESCRIPTION:
-		Allocates (with malloc(3)) and returns an array
+	Allocates (with malloc(3)) and returns an array
 		of strings obtained by splitting ’s’ using the
 		character ’c’ as a delimiter. The array must end
 		with a NULL pointer.
 */
 char	**ft_split(char const *s, char c)
 {
-	int		amnt_splits;
+	int		substrs;
 	char	**arr;
 	char	**temp_arr;
 	int		word_len;
+	char	*last_addr;
 
 	if (s == 0)
 		return (0);
-	amnt_splits = ft_cnt_delimiter((char *) s, c) + 1;
-	arr = malloc((amnt_splits + 1) * sizeof(char *));
+	substrs = ft_cnt_substr((char *)s, c);
+	arr = malloc((substrs + 1) * sizeof(char *));
 	if (arr == 0)
 		return (0);
 	temp_arr = arr;
-	while (*s != 0)
+	last_addr = (char *)s + ft_strlen(s);
+	while (s < last_addr)
 	{
-		word_len = ft_substr_len((char *) s, c);
+		word_len = ft_substr_len((char *)s, c);
 		if (word_len != 0)
 		{
 			*arr = malloc(word_len + 1);
 			if (*arr == 0)
 				return (0);
-			ft_strlcpy(*arr, (char *) s, word_len + 1);
+			ft_strlcpy(*arr, (char *)s, word_len + 1);
 			arr++;
 		}
 		s += word_len + 1;
 	}
 	*arr = 0;
 	return (temp_arr);
-	// return (0);
 }
-
 
 /* void    print_string_arr(char **arr)
 {
@@ -110,18 +120,23 @@ char	**ft_split(char const *s, char c)
 
 int	main(void)
 {
-	//printf("%i\n", ft_cnt_delimiter("aaaadaaadaadad", 'd'));
+	//printf("%i\n", ft_cnt_delimiter("\0aa\0bbb", '\0'));
+	//printf("%i\n", ft_cnt_substr("XHelloXXWorldX", 'X'));
+	//printf("%i\n", ft_cnt_substr("XHalloXXorldX", 'X'));
+
+
+	// char *s = "XXX";
+	// print_string_arr(ft_split(s, 'X'));
 
 	//ft_split
-    char delim = 'X';
-    //print_string_arr(ft_split("XHelloXWorldX", 'X'));
-    // print_string_arr(ft_split("XHelloXWorld", 'X'));
-    // print_string_arr(ft_split("HelloXWorldX", 'X'));
+    // char delim = 'X';
+	print_string_arr(ft_split("XHelloXWorld", 'X'));
+    //print_string_arr(ft_split("HelloXWorldX", 'X'));
     // print_string_arr(ft_split("HelloXWorld", 'X'));
-    print_string_arr(ft_split("XHello WorldX", 'X'));
-    print_string_arr(ft_split("NoDelimiter", 'X'));
+    // print_string_arr(ft_split("XHello WorldX", 'X'));
+    // print_string_arr(ft_split("NoDelimiter", 'X'));
     // print_string_arr(ft_split("Hello WorldX", 'X'));
-    // print_string_arr(ft_split("HelloXXWorld", 'X'));
+    print_string_arr(ft_split("HelloXXWorld", 'X'));
     // print_string_arr(ft_split("X", 'X'));
     // print_string_arr(ft_split("XX", 'X'));
     // print_string_arr(ft_split("XXX", 'X'));
@@ -129,17 +144,6 @@ int	main(void)
     // print_string_arr(ft_split(0, 'X'));
     // print_string_arr(ft_split("split  ||this|for|me|||||!|", '|'));
 
-	char str[] = "churchcchapelc";
-	char **test_arr;
-	int i = 0;
-
-	test_arr = ft_split(str, 'c');
-
-	while (i < 3)
-	{
-		printf("%s\n", test_arr[i]);
-		i++;
-	}
 
 	//printf("len until next delim: %i\n", ft_substr_len(&str[1], 'c'));
 
