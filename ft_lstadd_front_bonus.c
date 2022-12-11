@@ -1,0 +1,65 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/10 12:29:45 by lbaumann          #+#    #+#             */
+/*   Updated: 2022/12/11 13:13:43 by lbaumann         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+/*
+	PARAMETERS:
+		lst:  The address of a pointer to the first link of
+		a list.
+		new:  The address of a pointer to the node to be
+		added to the list.
+	DESCRIPTION:
+		Adds the node ’new’ at the beginning of the list.
+*/
+void ft_lstadd_front(t_list **lst, t_list *new)
+{
+	if (*lst)
+	{
+		new->next = *lst;
+		*lst = new;
+	}
+	else
+		*lst = new;
+}
+
+#include <stdio.h>
+
+void printList(t_list *node)
+{
+	while (node != NULL)
+	{
+		printf(" %d ", *(int *)node->content);
+		node = node->next;
+	}
+}
+
+int main(void)
+{
+	t_list *head = 0;
+
+	int i = 5;
+	int j = 3;
+	t_list *node_1 = ft_lstnew(&i);
+	ft_lstadd_front(&head, node_1);
+	t_list *node_2 = ft_lstnew(&j);
+	ft_lstadd_front(&head, node_2);
+
+
+	printf("size: %i\n", ft_lstsize(head));
+
+
+	printf("\n Created Linked list is: ");
+	printList(ft_lstlast(head));
+
+	return 0;
+}
