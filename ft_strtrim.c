@@ -6,7 +6,7 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 15:55:08 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/09 10:43:03 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/12 13:55:26 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 /*
 	checks if char c is contained in set s
 	if contained 1 is returned
-	direction: 0 forward , 1 backwards
 */
 static int	char_in_set(char c, char *set)
 {

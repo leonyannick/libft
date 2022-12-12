@@ -6,7 +6,7 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 09:41:52 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/09 17:37:03 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/12 14:16:40 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,9 @@ char	**ft_split(char const *s, char c)
 	return (arr);
 }
 
-/* void    print_string_arr(char **arr)
+/* #include <stdio.h>
+
+void    print_string_arr(char **arr)
 {
     if(arr == 0)
     {
@@ -136,13 +138,13 @@ int	main(void)
 
 	//ft_split
     // char delim = 'X';
-	print_string_arr(ft_split("XHelloXWorld", 'X'));
+	//print_string_arr(ft_split("XHelloXWorld", 'X'));
     //print_string_arr(ft_split("HelloXWorldX", 'X'));
     // print_string_arr(ft_split("HelloXWorld", 'X'));
     // print_string_arr(ft_split("XHello WorldX", 'X'));
     // print_string_arr(ft_split("NoDelimiter", 'X'));
     // print_string_arr(ft_split("Hello WorldX", 'X'));
-    print_string_arr(ft_split("HelloXXWorld", 'X'));
+    print_string_arr(ft_split(0, 'X'));
     // print_string_arr(ft_split("X", 'X'));
     // print_string_arr(ft_split("XX", 'X'));
     // print_string_arr(ft_split("XXX", 'X'));

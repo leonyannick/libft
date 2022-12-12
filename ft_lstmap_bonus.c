@@ -6,7 +6,7 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:44:08 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/12 11:17:21 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/12 13:27:12 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,3 +48,48 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (new_lst);
 }
+
+/* #include <stdio.h>
+
+void	*subtract(void *adr)
+{
+	*(int *)adr += 3;
+	return (adr);
+}
+
+void printList(t_list *node)
+{
+	while (node != NULL)
+	{
+		printf(" %i ", *(int *)node->content);
+		node = node->next;
+	}
+}
+
+int main(void)
+{
+	t_list *head = 0;
+	t_list *modified;
+
+	int i = 5;
+	int j = 3;
+	int k = 7;
+	t_list *node_1 = ft_lstnew(&i);
+	ft_lstadd_front(&head, node_1);
+	t_list *node_2 = ft_lstnew(&j);
+	ft_lstadd_front(&head, node_2);
+
+	t_list *node_3 = ft_lstnew(&k);
+	ft_lstadd_back(&head, node_3);
+
+	
+
+
+	printf("\n Created Linked list is: ");
+	printList(head);
+
+	printf("modified list: ");
+	modified = ft_lstmap(head, subtract, free);
+	printList(modified);
+	return 0;
+} */
