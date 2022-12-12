@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+         #
+#    By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 11:21:05 by lbaumann          #+#    #+#              #
-#    Updated: 2022/12/11 13:12:47 by lbaumann         ###   ########.fr        #
+#    Updated: 2022/12/12 11:15:25 by lbaumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ ft_substr.o ft_strjoin.o ft_strtrim.o ft_itoa.o ft_strmapi.o ft_striteri.o \
 ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_split.o
 
 OBJS_BONUS = ft_lstnew_bonus.o ft_lstadd_front_bonus.o ft_lstsize_bonus.o \
-ft_lstlast_bonus.c
+ft_lstlast_bonus.o ft_lstadd_back_bonus.o ft_lstdelone_bonus.o \
+ft_lstclear_bonus.o ft_lstiter_bonus.o ft_lstmap_bonus.o
 
 all: $(NAME)
 

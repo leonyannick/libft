@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 12:29:45 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/11 13:13:43 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/12 10:12:17 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void ft_lstadd_front(t_list **lst, t_list *new)
 		*lst = new;
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 
 void printList(t_list *node)
 {
@@ -49,17 +49,22 @@ int main(void)
 
 	int i = 5;
 	int j = 3;
+	int k = 7;
 	t_list *node_1 = ft_lstnew(&i);
 	ft_lstadd_front(&head, node_1);
 	t_list *node_2 = ft_lstnew(&j);
 	ft_lstadd_front(&head, node_2);
 
+	t_list *node_3 = ft_lstnew(&k);
+	ft_lstadd_back(&head, node_3);
+
+	ft_lstdelone(node_3, free);
 
 	printf("size: %i\n", ft_lstsize(head));
 
 
 	printf("\n Created Linked list is: ");
-	printList(ft_lstlast(head));
+	printList(head);
 
 	return 0;
-}
+} */

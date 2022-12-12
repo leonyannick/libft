@@ -1,0 +1,50 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/12 10:44:08 by lbaumann          #+#    #+#             */
+/*   Updated: 2022/12/12 11:17:21 by lbaumann         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+/*
+	PARAMETERS:
+		lst: The address of a pointer to a node.
+		f: The address of the function used to iterate on
+		the list.
+		del: The address of the function used to delete
+		the content of a node if needed.
+	RETURNS:
+		The new list.
+		NULL if the allocation fails.
+	DESCRIPTION:
+		Iterates the list ’lst’ and applies the function
+		’f’ on the content of each node. Creates a new
+		list resulting of the successive applications of
+		the function ’f’. The ’del’ function is used to
+		delete the content of a node if needed.
+*/
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+{
+	t_list	*new_lst;
+	t_list	*new_node;
+
+	new_lst = 0;
+	while (lst != 0)
+	{
+		new_node = ft_lstnew((*f)(lst->content));
+		if (new_node == 0)
+		{
+			ft_lstclear(&new_lst, del);
+			return (0);
+		}
+		ft_lstadd_back(&new_lst, new_node);
+		lst = lst->next;
+	}
+	return (new_lst);
+}

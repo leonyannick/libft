@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/11 12:54:27 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/12 09:57:38 by lbaumann         ###   ########.fr       */
+/*   Created: 2022/12/12 10:14:19 by lbaumann          #+#    #+#             */
+/*   Updated: 2022/12/12 10:28:57 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,27 @@
 
 /*
 	PARAMETERS:
-		lst, beginning of list
+		lst: The address of a pointer to a node.
+		del: The address of the function used to delete
+		the content of the node.
 	DESCRIPTION:
-		returns last node of the list
+		Deletes and frees the given node and every
+		successor of that node, using the function ’del’
+		and free(3).
+		Finally, the pointer to the list must be set to
+		NULL.
 */
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
+	t_list	*temp;
+
 	if (lst == 0)
-		return (0);
-	while (lst->next != 0)
+		return ;
+	while (*lst != 0)
 	{
-		lst = lst->next;
+		temp = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = temp;
 	}
-	return (lst);
+	*lst = 0;
 }
