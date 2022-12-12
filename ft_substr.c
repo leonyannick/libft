@@ -6,13 +6,11 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 12:30:20 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/08 17:31:36 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/12 14:54:29 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
-#include <stdlib.h>
 
 /*
 	RETURN:
