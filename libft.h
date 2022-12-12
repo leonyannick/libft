@@ -6,14 +6,13 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:23:05 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/12 10:45:51 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/12 15:10:27 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
 
