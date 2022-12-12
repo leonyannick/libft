@@ -6,11 +6,11 @@
 #    By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 11:21:05 by lbaumann          #+#    #+#              #
-#    Updated: 2022/12/12 12:05:41 by lbaumann         ###   ########.fr        #
+#    Updated: 2022/12/12 15:53:34 by lbaumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Werror -Wextra -c
 NAME = libft.a
 SRCS = ft_isdigit.c ft_isalpha.c ft_isalnum.c ft_isascii.c ft_isprint.c \
