@@ -6,7 +6,7 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 12:29:45 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/12 10:12:17 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/12 11:36:17 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 	DESCRIPTION:
 		Adds the node ’new’ at the beginning of the list.
 */
-void ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (*lst)
 	{

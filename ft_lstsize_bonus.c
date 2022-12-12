@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 12:44:46 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/11 12:51:02 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/12 11:36:27 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
