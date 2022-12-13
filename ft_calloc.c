@@ -6,7 +6,7 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 11:56:20 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/08 16:34:00 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/13 10:44:50 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*addr;
 
+	if (nmemb * size > MAX_INT)
+		return (0);
 	addr = malloc(nmemb * size);
 	if (addr == 0)
 		return (0);
