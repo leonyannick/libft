@@ -6,7 +6,7 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 12:54:15 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/09 14:14:22 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/13 10:27:14 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*ret;
 	int		i;
 
+	if (s == 0 || f == 0)
+		return (0);
 	str_len = ft_strlen(s);
 	ret = malloc(str_len + 1);
 	if (ret == 0)

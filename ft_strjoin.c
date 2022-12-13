@@ -6,7 +6,7 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 11:24:53 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/08 17:36:04 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/13 10:25:30 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*ret;
 	char	*ret_start;
 
+	if (s1 == 0 || s2 == 0)
+		return (0);
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
 	ret = malloc(len1 + len2 + 1);

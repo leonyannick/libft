@@ -6,7 +6,7 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:00:05 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/12 10:11:56 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/13 10:33:44 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 */
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	if (lst == 0)
+	if (lst == 0 || del == 0)
 		return ;
 	(*del)(lst->content);
 	free(lst);

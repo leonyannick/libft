@@ -6,7 +6,7 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:32:52 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/12 10:42:55 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/13 10:34:32 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 */
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
+	if (lst == 0 || f == 0)
+		return ;
 	while (lst != 0)
 	{
 		(*f)(lst->content);

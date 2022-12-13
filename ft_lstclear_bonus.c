@@ -6,7 +6,7 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:14:19 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/12 10:28:57 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/13 10:34:10 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*temp;
 
-	if (lst == 0)
+	if (lst == 0 || del == 0)
 		return ;
 	while (*lst != 0)
 	{

@@ -6,7 +6,7 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 15:55:08 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/12 13:55:26 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/13 10:26:03 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		i;
 	char	*ret;
 
+	if (s1 == 0 || set == 0)
+		return (0);
 	s1_len = ft_strlen(s1);
 	start_idx = 0;
 	end_idx = 0;

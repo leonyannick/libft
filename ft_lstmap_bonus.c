@@ -6,7 +6,7 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:44:08 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/12 13:27:12 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/13 10:35:07 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_lst;
 	t_list	*new_node;
 
+	if (lst == 0 || f == 0 || del == 0)
+		return (0);
 	new_lst = 0;
 	while (lst != 0)
 	{

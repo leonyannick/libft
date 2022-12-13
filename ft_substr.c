@@ -6,7 +6,7 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 12:30:20 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/12 14:54:29 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/13 10:24:41 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*sub;
 	size_t	s_len;
 
+	if (s == 0)
+		return (0);
 	s_len = ft_strlen(s);
 	if (start >= s_len || len == 0)
 		return (ft_strdup(""));

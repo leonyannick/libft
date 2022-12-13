@@ -6,7 +6,7 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 14:06:45 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/09 14:14:43 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/13 10:28:23 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	int		i;
 
+	if (s == 0 || f == 0)
+		return (0);
 	i = 0;
 	while (s[i] != 0)
 	{

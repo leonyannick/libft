@@ -6,7 +6,7 @@
 /*   By: lbaumann < lbaumann@student.42berlin.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 09:41:52 by lbaumann          #+#    #+#             */
-/*   Updated: 2022/12/12 14:16:40 by lbaumann         ###   ########.fr       */
+/*   Updated: 2022/12/13 10:26:24 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,22 @@ static int	ft_cnt_substr(char *s, char c)
 	return (cnt_substr);
 }
 
+/*
+	Frees prev allocated memory in case malloc fails
+*/
+static void	ft_freemem(char **arr)
+{
+	size_t	i;
+
+	i = 0;
+	while (arr[i])
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
+}
+
 static int	ft_cpystrs(char *s, char c, char **arr, char *last_addr)
 {
 	int	word_len;
@@ -67,7 +83,10 @@ static int	ft_cpystrs(char *s, char c, char **arr, char *last_addr)
 		{
 			*arr = malloc(word_len + 1);
 			if (*arr == 0)
+			{
+				ft_freemem(arr);
 				return (0);
+			}
 			ft_strlcpy(*arr, (char *)s, word_len + 1);
 			arr++;
 		}
