@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 16:47:27 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/01/12 17:46:00 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/02/19 09:00:38 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "../includes/get_next_line.h"
 
 /*
 -frees memory stored at pointers in case they are not NULL and returns NULL
@@ -39,11 +39,11 @@ static char	*gnl_join(char **stash, char *buffer)
 	char	*temp;
 
 	if (!*stash)
-		*stash = ft_substr(buffer, 0, BUFFER_SIZE);
+		*stash = gnl_substr(buffer, 0, BUFFER_SIZE);
 	else
 	{
 		temp = *stash;
-		*stash = ft_strjoin(*stash, buffer);
+		*stash = gnl_strjoin(*stash, buffer);
 		free(temp);
 	}
 	return (*stash);
@@ -62,15 +62,15 @@ static char	*gnl_save(char **stash)
 	char	*nl_idx;
 	char	*temp;
 
-	nl_idx = ft_strchr(*stash, '\n');
+	nl_idx = gnl_strchr(*stash, '\n');
 	if (!nl_idx)
 		stash_len_remain = 0;
 	else
-		stash_len_remain = ft_strlen(nl_idx + 1);
-	line_len = ft_strlen(*stash) - stash_len_remain;
-	line = ft_substr(*stash, 0, line_len);
+		stash_len_remain = gnl_strlen(nl_idx + 1);
+	line_len = gnl_strlen(*stash) - stash_len_remain;
+	line = gnl_substr(*stash, 0, line_len);
 	temp = *stash;
-	*stash = ft_substr(*stash, line_len, stash_len_remain);
+	*stash = gnl_substr(*stash, line_len, stash_len_remain);
 	free(temp);
 	if (!*stash)
 		return (gnl_free(stash, NULL, line));
@@ -90,11 +90,11 @@ static char	*gnl_parse(int fd, char **stash, char *buffer)
 {
 	ssize_t	read_ret;
 
-	while (!ft_strchr(buffer, '\n'))
+	while (!gnl_strchr(buffer, '\n'))
 	{
-		ft_memset(buffer, 0, BUFFER_SIZE);
+		gnl_memset(buffer, 0, BUFFER_SIZE);
 		read_ret = read(fd, buffer, BUFFER_SIZE);
-		if (!read_ret && !ft_strlen(*stash))
+		if (!read_ret && !gnl_strlen(*stash))
 			return (gnl_free(stash, buffer, NULL));
 		*stash = gnl_join(stash, buffer);
 		if (!*stash)
@@ -122,7 +122,7 @@ char	*get_next_line(int fd)
 	buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buffer)
 		return (NULL);
-	ft_memset(buffer, 0, BUFFER_SIZE + 1);
+	gnl_memset(buffer, 0, BUFFER_SIZE + 1);
 	if (fd > 1023 || fd < 0 || BUFFER_SIZE < 1 || read(fd, buffer, 0) == -1)
 		return (gnl_free(&stash[fd], buffer, NULL));
 	return (gnl_parse(fd, &stash[fd], buffer));

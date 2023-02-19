@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 16:47:56 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/01/12 17:03:41 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/02/19 09:03:21 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "../includes/get_next_line.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*gnl_memset(void *s, int c, size_t n)
 {
 	char	*addr;
 
@@ -26,7 +26,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	return ((char *) s);
 }
 
-size_t	ft_strlen(const char *s)
+size_t	gnl_strlen(const char *s)
 {
 	size_t	length;
 
@@ -49,7 +49,7 @@ size_t	ft_strlen(const char *s)
 	
 	casting int c to unsigned char
 */
-char	*ft_strchr(const char *s, int c)
+char	*gnl_strchr(const char *s, int c)
 {
 	c = (unsigned char) c;
 	while (*s != 0)
@@ -63,7 +63,7 @@ char	*ft_strchr(const char *s, int c)
 	return (0);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*gnl_strjoin(char const *s1, char const *s2)
 {
 	char	*ret;
 	int		i;
@@ -71,7 +71,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (s1 == 0 || s2 == 0)
 		return (0);
-	ret = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	ret = malloc(gnl_strlen(s1) + gnl_strlen(s2) + 1);
 	if (ret == 0)
 		return (0);
 	i = 0;
@@ -106,7 +106,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		string ’s’.
 		len:  The maximum length of the substring.
 */
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*gnl_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
 	size_t	s_len;
@@ -114,7 +114,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (s == 0)
 		return (0);
-	s_len = ft_strlen(s);
+	s_len = gnl_strlen(s);
 	i = 0;
 	if (start >= s_len)
 		len = 0;
