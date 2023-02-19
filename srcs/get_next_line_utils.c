@@ -6,11 +6,11 @@
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 16:47:56 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/02/19 09:03:21 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/02/19 11:46:56 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/get_next_line.h"
+#include "../includes/libft.h"
 
 void	*gnl_memset(void *s, int c, size_t n)
 {

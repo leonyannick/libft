@@ -6,11 +6,11 @@
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 16:47:27 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/02/19 09:00:38 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/02/19 11:47:04 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/get_next_line.h"
+#include "../includes/libft.h"
 
 /*
 -frees memory stored at pointers in case they are not NULL and returns NULL

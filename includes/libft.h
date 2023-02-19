@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:23:05 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/02/15 17:40:14 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/02/19 11:46:22 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,17 @@ int		ft_printf(const char *format, ...);
 int		ft_parser(char *format, va_list args, int *bytes_written);
 int		ft_format(char *format, va_list args);
 int		ft_puthex_fd(size_t n, char *base, int fd, int is_ptr);
+
+//gnl
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
+
+char	*get_next_line(int fd);
+void	*gnl_memset(void *s, int c, size_t n);
+size_t	gnl_strlen(const char *s);
+char	*gnl_strchr(const char *s, int c);
+char	*gnl_strjoin(char const *s1, char const *s2);
+char	*gnl_substr(char const *s, unsigned int start, size_t len);
 
 #endif
