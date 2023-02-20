@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:23:05 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/02/19 11:46:22 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/02/20 23:13:56 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,10 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 //printf
+# define STD_OUT 1
+# define HEX_LC "0123456789abcdef"
+# define HEX_UC	"0123456789ABCDEF"
+
 int		ft_printf(const char *format, ...);
 int		ft_parser(char *format, va_list args, int *bytes_written);
 int		ft_format(char *format, va_list args);
