@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_chrstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/30 12:34:47 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/02/24 19:17:33 by lbaumann         ###   ########.fr       */
+/*   Created: 2023/02/24 18:51:30 by lbaumann          #+#    #+#             */
+/*   Updated: 2023/02/24 19:20:57 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int	ft_atoi(const char *str)
+/**
+ * Returns the index of c in s (if found) and -1 if not
+ * @param c char that s is searched for
+ * @param s string that is searched
+*/
+int	ft_chrstr(char c, char *s)
 {
-	int	num;
-	int	sign;
+	int	i;
 
-	num = 0;
-	sign = 1;
-	while ((*str >= '\t' && *str <= '\r') || *str == ' ')
-		str++;
-	if (*str == '+' || *str == '-')
+	if (!s)
+		return (-1);
+	i = 0;
+	while (s[i])
 	{
-		if (*str == '-')
-			sign = -1;
-		str++;
+		if (s[i] == c)
+			return (i);
+		i++;
 	}
-	while (*str <= '9' && *str >= '0')
-	{
-		num = 10 * num + *str - '0';
-		str++;
-	}
-	num *= sign;
-	return (num);
+	return (-1);
 }

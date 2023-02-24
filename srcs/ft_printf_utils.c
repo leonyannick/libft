@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 14:35:20 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/02/15 17:38:25 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/02/24 19:21:21 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ RET:
 	-bytes written
 	-returns -1 if write fails
 */
+
 int	ft_puthex_fd(size_t n, char *base, int fd, int is_ptr)
 {
 	int		bytes_written;
