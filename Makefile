@@ -6,7 +6,7 @@
 #    By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 11:21:05 by lbaumann          #+#    #+#              #
-#    Updated: 2023/02/20 23:11:25 by lbaumann         ###   ########.fr        #
+#    Updated: 2023/03/05 18:19:53 by lbaumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,10 @@ NAME = libft.a
 
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
+
+ifeq ($(DEBUG), 1)
+CFLAGS = -g
+endif
 
 SRCDIR = srcs/
 INCDIR = includes/
