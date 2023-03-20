@@ -6,9 +6,11 @@
 /*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 12:35:29 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/03/20 12:38:43 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/03/20 12:41:44 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../includes/libft.h"
 
 void	*ft_free_set_null(void *ptr)
 {

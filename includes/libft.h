@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:23:05 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/03/20 12:38:33 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/03/20 12:40:56 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <limits.h>
 # include <stdarg.h>
 # include <stddef.h>
+# include <stdlib.h>
 
 typedef struct s_list
 {
