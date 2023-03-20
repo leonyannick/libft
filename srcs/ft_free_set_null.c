@@ -6,11 +6,11 @@
 /*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 12:35:29 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/03/20 12:35:33 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/03/20 12:38:43 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*free_set_null(void *ptr)
+void	*ft_free_set_null(void *ptr)
 {
 	if (ptr)
 		free(ptr);
