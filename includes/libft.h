@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:23:05 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/02/24 19:18:04 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/03/20 12:36:55 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <limits.h>
 # include <stdarg.h>
+# include <stddef.h>
 
 typedef struct s_list
 {
@@ -62,6 +63,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
+void	*free_set_null(void *ptr);
 
 //fd
 int		ft_putchar_fd(char c, int fd);
