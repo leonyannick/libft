@@ -6,20 +6,11 @@
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 11:22:20 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/06/02 11:22:32 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/06/02 11:56:33 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
-
-t_list	*ft_lstfindprev(t_list *lst, t_list *node)
-{
-	if (!lst || !node)
-		return (NULL);
-	while (lst->next && lst->next != node)
-		lst = lst->next;
-	return (lst);
-}
 
 /**
  * before: --PREV-->NODE-->NEXT-->
