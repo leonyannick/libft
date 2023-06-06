@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstremove.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 11:22:20 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/06/02 11:56:33 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/06/06 10:15:44 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
  * before: --PREV-->NODE-->NEXT-->
  * after: -->PREV-->NEXT-->
 */
-void	ft_lstremove(t_list **lst, t_list *node)
+void	ft_lstremove(t_list **lst, t_list *node, void (*del)(void *))
 {
 	t_list  *prev;
 
@@ -27,7 +27,7 @@ void	ft_lstremove(t_list **lst, t_list *node)
 		*lst = node->next;
 	else
 		prev->next = node->next;
-	ft_lstdelone(node, free);
+	ft_lstdelone(node, del);
 }
 
 // void printList(t_list *node)
