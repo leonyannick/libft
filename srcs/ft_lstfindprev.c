@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 11:55:18 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/06/07 10:12:24 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/06/07 11:04:49 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_list	*ft_lstfindprev(t_list *lst, t_list *node)
 	if (!lst || lst == node)
 		return (NULL);
 	if (!node)
-		return (lst);
+		return (ft_lstlast(lst));
 	while (lst->next && lst->next != node)
 		lst = lst->next;
 	return (lst);
@@ -46,12 +46,13 @@ t_list	*ft_lstfindprev(t_list *lst, t_list *node)
 
 // 	t_list *node_2 = ft_lstnew(j);
 // 	// ft_lstadd_back(lst, node_2);
-// 	ft_lst_insert_before(lst, *lst, node_2);
+// 	ft_lst_insert_before(lst, NULL, node_2);
 
-// 	ft_lstremove(lst, node_2, NULL);
-// 	ft_lstremove(lst, *lst, NULL);
+// 	// ft_lstremove(lst, node_2, NULL);
+// 	// ft_lstremove(lst, *lst, NULL);
 // 	t_list *node_3 = ft_lstnew(k);
-// 	ft_lstadd_back(lst, node_3);
+// 	ft_lst_insert_before(lst, NULL, node_3);
+// 	// ft_lstadd_back(lst, node_3);
 // }
 
 // void	print_list(void *arg)
