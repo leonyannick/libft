@@ -43,7 +43,7 @@ ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
 ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c get_next_line.c \
 get_next_line_utils.c ft_printf.c ft_printf_utils.c ft_free_set_null.c \
 ft_free_split_arr.c ft_strcmp.c ft_lst_insert_before.c ft_lstremove.c \
-ft_lstfindprev.c
+ft_lstfindprev.c ft_strjoin_free.c
 
 SRCS := $(addprefix $(SRCDIR), $(SRC))
 OBJ := $(SRC:.c=.o)

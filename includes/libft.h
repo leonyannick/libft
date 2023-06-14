@@ -56,7 +56,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	**ft_split(char const *s, char c);
 int		ft_chrstr(char c, char *s);
-
+char	*ft_strjoin_free(char const *s1, char const *s2);
 //mem
 void	ft_bzero(void *s, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
