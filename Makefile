@@ -6,7 +6,7 @@
 #    By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 11:21:05 by lbaumann          #+#    #+#              #
-#    Updated: 2023/06/07 10:08:36 by lbaumann         ###   ########.fr        #
+#    Updated: 2023/06/15 11:44:53 by lbaumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,9 @@ ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
 ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c get_next_line.c \
 get_next_line_utils.c ft_printf.c ft_printf_utils.c ft_free_set_null.c \
 ft_free_split_arr.c ft_strcmp.c ft_lst_insert_before.c ft_lstremove.c \
-ft_lstfindprev.c ft_strjoin_free.c
+ft_lstfindprev.c ft_strjoin_free.c ft_dict_add_node.c ft_dict_get_node.c \
+ft_dict_get_value.c ft_dict_modify_value.c ft_dict_node_del.c \
+ft_dict_rm_node.c ft_dict_print.c
 
 SRCS := $(addprefix $(SRCDIR), $(SRC))
 OBJ := $(SRC:.c=.o)

@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_insert_before.c                             :+:      :+:    :+:   */
+/*   ft_dict_get_node.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/01 11:03:48 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/06/15 11:36:31 by lbaumann         ###   ########.fr       */
+/*   Created: 2023/06/15 11:17:31 by lbaumann          #+#    #+#             */
+/*   Updated: 2023/06/15 11:31:27 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../includes/dict.h"
 
 /**
- * before: PREV-->NODE-->NEXT-->
- * after: -->PREV-->NEW-->NODE-->NEXT-->
+ * returns the entire dictionary node belonging to key
 */
-void	ft_lst_insert_before(t_list **lst, t_list *node, t_list *new)
+t_list	*ft_dict_get_node(t_list *dict, char *key)
 {
-	t_list	*prev;
+	t_dict	*item;
 
-	if (!new)
-		return ;
-	prev = ft_lstfindprev(*lst, node);
-	if (prev)
-		prev->next = new;
-	else
-		*lst = new;
-	new->next = node;
+	if (!key)
+		return (NULL);
+	while (dict)
+	{
+		item = (t_dict *)dict->content;
+		if (!ft_strcmp(item->key, key))
+			return (dict);
+		dict = dict->next;
+	}
+	return (NULL);
 }

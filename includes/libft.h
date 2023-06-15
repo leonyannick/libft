@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:23:05 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/06/07 10:06:16 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/06/15 11:45:19 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # include <stdarg.h>
 # include <stddef.h>
 # include <stdlib.h>
+# include <stdio.h>
+# include "dict.h"
 
 typedef struct s_list
 {

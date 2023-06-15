@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_insert_before.c                             :+:      :+:    :+:   */
+/*   ft_dict_node_del.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/01 11:03:48 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/06/15 11:36:31 by lbaumann         ###   ########.fr       */
+/*   Created: 2023/06/15 11:11:29 by lbaumann          #+#    #+#             */
+/*   Updated: 2023/06/15 11:31:37 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../includes/dict.h"
 
 /**
- * before: PREV-->NODE-->NEXT-->
- * after: -->PREV-->NEW-->NODE-->NEXT-->
+ * function passed to ft_lstremove, ft_lstclear, etc. to free dictionary data
 */
-void	ft_lst_insert_before(t_list **lst, t_list *node, t_list *new)
+void	ft_dict_node_del(void *arg)
 {
-	t_list	*prev;
+	t_dict	*data;
 
-	if (!new)
+	if (!arg)
 		return ;
-	prev = ft_lstfindprev(*lst, node);
-	if (prev)
-		prev->next = new;
-	else
-		*lst = new;
-	new->next = node;
+	data = (t_dict *)arg;
+	if (!data)
+		return ;
+	data->key = ft_free_set_null(data->key);
+	data->value = ft_free_set_null(data->value);
+	data = ft_free_set_null(data);
 }

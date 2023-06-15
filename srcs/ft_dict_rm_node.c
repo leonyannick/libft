@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_insert_before.c                             :+:      :+:    :+:   */
+/*   ft_dict_rm_node.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/01 11:03:48 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/06/15 11:36:31 by lbaumann         ###   ########.fr       */
+/*   Created: 2023/06/15 11:24:27 by lbaumann          #+#    #+#             */
+/*   Updated: 2023/06/15 11:36:45 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../includes/dict.h"
 
 /**
- * before: PREV-->NODE-->NEXT-->
- * after: -->PREV-->NEW-->NODE-->NEXT-->
+ * removes node corresponding to key from dictionary
 */
-void	ft_lst_insert_before(t_list **lst, t_list *node, t_list *new)
+void	ft_dict_rm_node(t_list **dict, char *key)
 {
-	t_list	*prev;
+	t_list	*node;
 
-	if (!new)
-		return ;
-	prev = ft_lstfindprev(*lst, node);
-	if (prev)
-		prev->next = new;
-	else
-		*lst = new;
-	new->next = node;
+	node = ft_dict_get_node(*dict, key);
+	ft_lstremove(dict, node, ft_dict_node_del);
 }
