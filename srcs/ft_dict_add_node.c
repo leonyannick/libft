@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 11:22:38 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/06/15 11:39:22 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/06/15 12:20:06 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,19 +48,19 @@ void	ft_dict_add_node(t_list **dict, char *key, void *value)
 	char	*str3 = NULL;
 	char	*str5 = ft_strdup("new value");
 
-	dict_add_item(&dict, "item1", str1);
-	dict_add_item(&dict, "item2", str2);
-	dict_add_item(&dict, "item3", str3);
-	ft_lstiter(dict, ft_print_dict);
-	ft_lstremove(&dict, dict_get_node(dict, "item2"), ft_dict_node_del);
-	dict_add_item(&dict, "item3", str5);
-	ft_lstiter(dict, ft_print_dict);
+	ft_dict_add_node(&dict, "item1", str1);
+	ft_dict_add_node(&dict, "item2", str2);
+	ft_dict_add_node(&dict, "item3", str3);
+	ft_lstiter(dict, ft_dict_print);
+	ft_lstremove(&dict, ft_dict_get_node(dict, "item2"), ft_dict_node_del);
+	ft_dict_add_node(&dict, "item3", str5);
+	// ft_lstiter(dict, ft_dict_print);
 	// printf("item2: %s\n", (char *)dict_get_value(dict, "item2"));
 
 	// char *str4 = ft_strdup("nichtmehrecho");
 	// dict_modify_value(dict, "item2", str4);
 	
-	// ft_lstiter(dict, print_dict);
+	// ft_lstiter(dict, dict_print);
 	
 	ft_lstclear(&dict, ft_dict_node_del);
 	
