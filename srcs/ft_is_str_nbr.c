@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_is_str_nbr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/31 12:17:24 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/06/19 18:46:19 by lbaumann         ###   ########.fr       */
+/*   Created: 2023/06/21 12:30:17 by lbaumann          #+#    #+#             */
+/*   Updated: 2023/06/21 12:30:42 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+/**
+ * checks if arg is a number 
+ * (a number can start with + or - followed by only digits)
+ * @return true if a number, false if no number
+*/
+bool	ft_is_str_nbr(const char *arg)
 {
-	while (*s1 && *s2)
+	if (!arg)
+		return (false);
+	if (*arg == '+' || *arg == '-')
+		arg++;
+	while (*arg)
 	{
-		if (*s1 != *s2)
-			break ;
-		s1++;
-		s2++;
+		if (!ft_isdigit(*arg))
+			return (false); 
+		arg++;
 	}
-	return (*s1 - *s2);
+	return (true);
 }
