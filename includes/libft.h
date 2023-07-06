@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 15:23:05 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/07/06 17:19:24 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/07/06 17:57:25 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ t_list	*ft_lstfindprev(t_list *lst, t_list *node);
 # define HEX_UC	"0123456789ABCDEF"
 
 int		ft_printf(const char *format, ...);
+int		ft_fd_printf(int fd, const char *format, ...);
 int		ft_parser(char *format, va_list args, int *bytes_written);
 int		ft_format(char *format, va_list args);
 int		ft_puthex_fd(size_t n, char *base, int fd, int is_ptr);
