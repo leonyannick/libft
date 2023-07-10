@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 12:29:45 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/02/15 16:55:35 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/07/10 15:54:26 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*ft_strdup(const char *s)
 	char	*dup;
 	int		i;
 
+	if (!s)
+		return (NULL);
 	len = ft_strlen(s);
 	dup = malloc(len + 1);
 	if (dup == 0)
