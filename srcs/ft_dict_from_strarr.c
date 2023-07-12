@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 11:12:52 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/06/16 11:41:49 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/07/12 13:10:46 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,24 @@
 t_list	*ft_dict_from_strarr(char **arr)
 {
 	t_list	*dict;
-	char	*key;
-	char	*value;
-	char	**key_val_pair;
+	size_t	len;
+	char	*key_val[2];
+	char	*equals;
 
 	dict = NULL;
 	if (!arr)
 		return (NULL);
 	while (*arr)
 	{
-		key_val_pair = ft_split(*arr, '=');
-		key = key_val_pair[0];
-		if (key_val_pair[1])
-			value = ft_strdup(key_val_pair[1]);
-		else
-			value = ft_strdup("");
-		ft_dict_add_node(&dict, key, value);
-		ft_free_split_arr(key_val_pair);
+		equals = ft_strchr(*arr, '=');
+		if (!equals)
+			return (NULL);
+		len = ft_strlen(*arr);
+		key_val[0] = ft_substr(*arr, 0, equals - *arr);
+		key_val[1] = ft_substr(equals + 1, 0, &(*arr)[len] - equals);
+		if (!key_val[1])
+			key_val[1] = ft_strdup("");
+		ft_dict_add_node(&dict, key_val[0], key_val[1]);
 		arr++;
 	}
 	return (dict);
