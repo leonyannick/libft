@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 10:44:31 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/02/15 16:54:33 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/07/12 16:10:15 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	ft_putnbr(int nb, char *s)
 	char	c;
 
 	if (nb < 0)
-	{	
+	{
 		*s = '-';
 		s++;
 		nb *= -1;

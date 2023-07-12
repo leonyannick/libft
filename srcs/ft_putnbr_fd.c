@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 14:34:33 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/02/15 17:41:28 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/07/12 16:10:28 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_putnbr_fd(long n, int fd)
 	if (n == 0)
 		return (write(fd, "0", 1));
 	if (n < 0)
-	{	
+	{
 		n *= -1;
 		if (write(fd, "-", 1) < 0)
 			return (-1);

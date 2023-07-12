@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 16:47:27 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/02/19 11:47:04 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/07/12 16:10:04 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	*gnl_free(char **stash, char *buffer, char *line)
 	{
 		free (*stash);
 		*stash = 0;
-	}	
+	}
 	if (buffer)
 		free (buffer);
 	if (line)
