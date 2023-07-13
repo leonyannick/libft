@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 11:12:52 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/07/12 13:10:46 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/07/13 15:06:10 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ t_list	*ft_dict_from_strarr(char **arr)
 		if (!key_val[1])
 			key_val[1] = ft_strdup("");
 		ft_dict_add_node(&dict, key_val[0], key_val[1]);
+		key_val[0] = ft_free_set_null(key_val[0]);
 		arr++;
 	}
 	return (dict);
